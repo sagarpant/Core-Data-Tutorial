@@ -29,6 +29,9 @@
 		7E52554628AB8E4B000FFBE8 /* CompanyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E52554528AB8E4B000FFBE8 /* CompanyListViewModel.swift */; };
 		7E52554928AC18CA000FFBE8 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E52554828AC18CA000FFBE8 /* TaskListViewController.swift */; };
 		7E52554B28AC18E5000FFBE8 /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E52554A28AC18E5000FFBE8 /* TaskListViewModel.swift */; };
+		7E52554D28AC45C8000FFBE8 /* OrganisationHierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E52554C28AC45C8000FFBE8 /* OrganisationHierarchy.swift */; };
+		7E52554F28AC4620000FFBE8 /* EmployeeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E52554E28AC4620000FFBE8 /* EmployeeDetailsView.swift */; };
+		7E52555128AC469F000FFBE8 /* EmployeeTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E52555028AC469F000FFBE8 /* EmployeeTasksView.swift */; };
 		7EF7BB812859305C00C9F469 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7BB802859305C00C9F469 /* AppDelegate.swift */; };
 		7EF7BB832859305C00C9F469 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7BB822859305C00C9F469 /* SceneDelegate.swift */; };
 		7EF7BB852859305C00C9F469 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7BB842859305C00C9F469 /* ViewController.swift */; };
@@ -61,6 +64,9 @@
 		7E52554528AB8E4B000FFBE8 /* CompanyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListViewModel.swift; sourceTree = "<group>"; };
 		7E52554828AC18CA000FFBE8 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		7E52554A28AC18E5000FFBE8 /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
+		7E52554C28AC45C8000FFBE8 /* OrganisationHierarchy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationHierarchy.swift; sourceTree = "<group>"; };
+		7E52554E28AC4620000FFBE8 /* EmployeeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsView.swift; sourceTree = "<group>"; };
+		7E52555028AC469F000FFBE8 /* EmployeeTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTasksView.swift; sourceTree = "<group>"; };
 		7EF7BB7D2859305C00C9F469 /* CoreDataFromStart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataFromStart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF7BB802859305C00C9F469 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EF7BB822859305C00C9F469 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +125,9 @@
 			children = (
 				7E0B01D428AA61FE00D1D9A7 /* EmployeeDetailsViewController.swift */,
 				7E0B01D628AAC64800D1D9A7 /* EmployeeDetailsViewModel.swift */,
+				7E52554C28AC45C8000FFBE8 /* OrganisationHierarchy.swift */,
+				7E52554E28AC4620000FFBE8 /* EmployeeDetailsView.swift */,
+				7E52555028AC469F000FFBE8 /* EmployeeTasksView.swift */,
 			);
 			path = EmployeeDetails;
 			sourceTree = "<group>";
@@ -276,9 +285,12 @@
 				7E52553E28AB6DDF000FFBE8 /* Employee+CoreDataClass.swift in Sources */,
 				7E52553F28AB6DDF000FFBE8 /* Employee+CoreDataProperties.swift in Sources */,
 				7E0B01C228AA23B800D1D9A7 /* DEmployee.swift in Sources */,
+				7E52554F28AC4620000FFBE8 /* EmployeeDetailsView.swift in Sources */,
 				7E0B01CD28AA31AD00D1D9A7 /* UIView+Extension.swift in Sources */,
 				7E0B01CC28AA31AD00D1D9A7 /* UIColor+Extension.swift in Sources */,
 				7E52554428AB8D82000FFBE8 /* CompanyListViewController.swift in Sources */,
+				7E52555128AC469F000FFBE8 /* EmployeeTasksView.swift in Sources */,
+				7E52554D28AC45C8000FFBE8 /* OrganisationHierarchy.swift in Sources */,
 				7E0B01C428AA244F00D1D9A7 /* DCompany.swift in Sources */,
 				7EF7BB812859305C00C9F469 /* AppDelegate.swift in Sources */,
 				7E0B01D528AA61FE00D1D9A7 /* EmployeeDetailsViewController.swift in Sources */,

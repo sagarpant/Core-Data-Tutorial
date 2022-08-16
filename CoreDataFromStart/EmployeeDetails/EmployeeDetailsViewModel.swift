@@ -19,6 +19,7 @@ enum EmployeeDetailsFetchError: Error {
 protocol EmployeeDetailsViewModel: ViewModel {
     var employeeDetailsViewData: EmployeeDetailsView.ViewData? { get }
     var orgHierarchyViewData: OrganisationHierarchy.ViewData? { get }
+    var employeeTasksViewData: EmployeeTasksView.ViewData? { get }
 }
 
 final class EmployeeDetailsViewModelImp: EmployeeDetailsViewModel {
@@ -55,5 +56,9 @@ final class EmployeeDetailsViewModelImp: EmployeeDetailsViewModel {
     
     var orgHierarchyViewData: OrganisationHierarchy.ViewData? {
         return employee?.orgHierarchyViewData
+    }
+    
+    var employeeTasksViewData: EmployeeTasksView.ViewData? {
+        return employee?.employeeTasksViewData
     }
 }

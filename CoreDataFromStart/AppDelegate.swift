@@ -78,6 +78,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         moc.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
         company.name = "X"
         company.location = "L1"
+        
+        for i in 1...100 {
+            let employee = Employee(context: moc)
+            employee.firstName = "employee\(i)"
+            employee.age = 29
+            employee.lastName = "employee\(i)last"
+        }
 
         employee1.age = 30
         employee2.firstName = "Beta"
@@ -87,7 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         employee1.firstName = "Alpha"
         employee1.lastName = "A"
 
-//        employee1.employer = company
+        employee1.employer = company
         employee2.employer = company
         manager.employer = company
 
@@ -109,7 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         task2.estimatedDays = 4
         task2.taskId = 2
 
-        task1.owner = employee1
+        task1.owner = employee2
         task2.owner = employee2
         
         try? moc.save()
