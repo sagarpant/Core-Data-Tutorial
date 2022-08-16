@@ -70,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            countOfEmployees > 0 {
             return container
         }
-        
+
         let employee1 = Employee(context: moc)
         let employee2 = Employee(context: moc)
         let manager = Employee(context: moc)
@@ -78,25 +78,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         moc.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
         company.name = "X"
         company.location = "L1"
-        
+
         employee1.age = 30
         employee2.firstName = "Beta"
         employee2.lastName = "B"
         employee2.age = 40
-        
+
         employee1.firstName = "Alpha"
         employee1.lastName = "A"
-        
-        employee1.employer = company
+
+//        employee1.employer = company
         employee2.employer = company
         manager.employer = company
-        
+
         manager.firstName = "Gamma"
         manager.lastName = "G"
         manager.age = 45
-        
+
         employee1.manager = manager
         employee2.manager = manager
+
+        let task1 = Task(context: moc)
+        let task2 = Task(context: moc)
+
+        task1.taskDescription = "Attend bootcamp"
+        task1.estimatedDays = 3
+        task1.taskId = 1
+
+        task2.taskDescription = "Implement Core Data"
+        task2.estimatedDays = 4
+        task2.taskId = 2
+
+        task1.owner = employee1
+        task2.owner = employee2
         
         try? moc.save()
         return container

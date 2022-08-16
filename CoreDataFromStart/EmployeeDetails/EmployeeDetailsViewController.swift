@@ -144,6 +144,18 @@ final class EmployeeDetailsView: UIView {
     }
 }
 
+extension EmployeeDetailsViewController: EmployeeDetailsDelegate {
+    
+    func employeeDetailsFetched(result: Result<Void, Error>) {
+        switch result {
+        case .failure(let error):
+            print(error)
+        case .success():
+            render()
+        }
+    }
+}
+
 final class OrganisationHierarchy: UIView {
     
     private lazy var managerLabel = UILabel.withAutoLayout()

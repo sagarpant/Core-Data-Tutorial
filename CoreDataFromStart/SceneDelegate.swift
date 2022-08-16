@@ -20,13 +20,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let container = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer else { return }
         window = UIWindow(windowScene: windowScene)
         
+        let tabViewController = UITabBarController()
         
-        let viewModel = EmployeeListViewModelImp(persistentContainer: container)
-        let employeeListViewController = EmployeeListViewController(viewModel: viewModel)
-        viewModel.delegate = employeeListViewController
-        let navigationController = UINavigationController(rootViewController: employeeListViewController)
-        navigationController.navigationBar.prefersLargeTitles = true
-        window?.rootViewController = navigationController
+        let employeeViewModel = EmployeeListViewModelImp(persistentContainer: container)
+        let employeeListViewController = EmployeeListViewController(viewModel: employeeViewModel)
+        employeeViewModel.delegate = employeeListViewController
+        let employeeNavigationController = UINavigationController(rootViewController: employeeListViewController)
+        employeeNavigationController.navigationBar.prefersLargeTitles = true
+        employeeListViewController.tabBarItem = UITabBarItem(title: "Employees", image: UIImage(systemName: "person.3.sequence"), selectedImage: UIImage(systemName: "person.3.fill"))
+        
+        let companyViewModel = CompanyListViewModelImp(persistentContainer: container)
+        let companyListViewController = CompanyListViewController(viewModel: companyViewModel)
+        companyViewModel.delegate = companyListViewController
+        let companyNavigationController = UINavigationController(rootViewController: companyListViewController)
+        companyNavigationController.navigationBar.prefersLargeTitles = true
+        companyListViewController.tabBarItem = UITabBarItem(title: "Companies", image: UIImage(systemName: "building"), selectedImage: UIImage(systemName: "building.fill"))
+        
+        let taskViewModel = TaskListViewModelImp(persistentContainer: container)
+        let taskListViewController = TaskListViewController(viewModel: taskViewModel)
+        taskViewModel.delegate = taskListViewController
+        let taskNavigationController = UINavigationController(rootViewController: taskListViewController)
+        taskNavigationController.navigationBar.prefersLargeTitles = true
+        taskNavigationController.tabBarItem = UITabBarItem(title: "Tasks", image: UIImage(systemName: "note.text"), selectedImage: UIImage(systemName: "note.text")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal))
+        
+        tabViewController.setViewControllers([employeeNavigationController,
+                                              companyNavigationController,
+                                              taskNavigationController],
+                                             animated: true)
+  
+        window?.rootViewController = tabViewController
         window?.makeKeyAndVisible()
     }
 

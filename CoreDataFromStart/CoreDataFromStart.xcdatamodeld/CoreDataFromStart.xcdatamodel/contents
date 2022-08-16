@@ -15,8 +15,8 @@
         <attribute name="firstName" attributeType="String" defaultValueString="&quot;&quot;"/>
         <attribute name="lastName" optional="YES" attributeType="String"/>
         <relationship name="employer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Company" inverseName="employees" inverseEntity="Company"/>
-        <relationship name="manager" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Employee" inverseName="reportees" inverseEntity="Employee"/>
-        <relationship name="reportees" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Employee" inverseName="manager" inverseEntity="Employee"/>
+        <relationship name="manager" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Employee" inverseName="reportees" inverseEntity="Employee"/>
+        <relationship name="reportees" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Employee" inverseName="manager" inverseEntity="Employee"/>
         <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="owner" inverseEntity="Task"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
@@ -36,8 +36,8 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Company" positionX="-129.7318115234375" positionY="-217.5968322753906" width="128" height="74"/>
-        <element name="Employee" positionX="79.9688720703125" positionY="-189.6886901855469" width="128" height="134"/>
-        <element name="Task" positionX="366.8544311523438" positionY="-219.2801818847656" width="128" height="89"/>
+        <element name="Company" positionX="-129.7318115234375" positionY="-217.5968322753906" width="128" height="88"/>
+        <element name="Employee" positionX="79.9688720703125" positionY="-189.6886901855469" width="128" height="148"/>
+        <element name="Task" positionX="366.8544311523438" positionY="-219.2801818847656" width="128" height="103"/>
     </elements>
 </model>

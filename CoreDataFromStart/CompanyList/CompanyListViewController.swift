@@ -1,19 +1,19 @@
 //
-//  EmployeeListViewController.swift
+//  CompanyListViewController.swift
 //  CoreDataFromStart
 //
-//  Created by Sagar Pant on 15/08/22.
+//  Created by Sagar Pant on 16/08/22.
 //
 
 import UIKit
 
-final class EmployeeListViewController: UIViewController {
+final class CompanyListViewController: UIViewController {
     
-    private let viewModel: EmployeeListViewModel
-    static let employeeListCellIdentifier = "EmployeeListCell"
+    private let viewModel: CompanyListViewModel
+    static let companyListCellIdentifier = "EmployeeListCell"
     private var isSorted = false
     
-    init(viewModel: EmployeeListViewModel) {
+    init(viewModel: CompanyListViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -25,7 +25,7 @@ final class EmployeeListViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView.withAutoLayout()
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: EmployeeListViewController.employeeListCellIdentifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: CompanyListViewController.companyListCellIdentifier)
         tableView.dataSource = self
         return tableView
     }()
@@ -41,11 +41,6 @@ final class EmployeeListViewController: UIViewController {
         view.addSubview(fab)
         view.setNeedsUpdateConstraints()
         render()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        viewModel.start()
     }
     
     override func updateViewConstraints() {
@@ -71,29 +66,28 @@ final class EmployeeListViewController: UIViewController {
         view.backgroundColor = .primaryColor
         fab.layer.cornerRadius = 25
         fab.backgroundColor = .buttonNormalColor
-        navigationItem.title = "Employee List"
+        navigationItem.title = "Company List"
         let image = UIImage(systemName: "plus")?.withTintColor(.white).withRenderingMode(.alwaysOriginal).resizeImage(targetSize: CGSize(width: 30, height: 30))
         fab.setImage(image, for: .normal)
         updateRighBarButton()
     }
 }
 
-extension EmployeeListViewController: UITableViewDelegate {
+extension CompanyListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let employee = viewModel.data(indexPath: indexPath)
-        let viewModel = EmployeeDetailsViewModelImp(persistentContiner: viewModel.persistentContainer, employeeName: employee.firstName ?? "")
-        let vc = EmployeeDetailsViewController(viewModel: viewModel)
-        viewModel.delegate = vc
-        navigationController?.pushViewController(vc, animated: true)
+//        let employee = viewModel.data(indexPath: indexPath)
+//        let viewModel = EmployeeDetailsViewModelImp(persistentContiner: viewModel.persistentContainer, employeeName: employee.firstName ?? "")
+//        let vc = EmployeeDetailsViewController(viewModel: viewModel)
+//        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
-extension EmployeeListViewController: UITableViewDataSource {
+extension CompanyListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: EmployeeListViewController.employeeListCellIdentifier, for: indexPath)
-        let employee = viewModel.data(indexPath: indexPath)
-        cell.textLabel?.text = employee.firstName
+        let cell = tableView.dequeueReusableCell(withIdentifier: CompanyListViewController.companyListCellIdentifier, for: indexPath)
+        let company = viewModel.data(indexPath: indexPath)
+        cell.textLabel?.text = company.name
         return cell
     }
     
@@ -108,14 +102,14 @@ extension EmployeeListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self]  _, indexPath in
             print(indexPath.row)
-            self?.viewModel.deleteEmployee(indexPath: indexPath)
+            self?.viewModel.deleteCompany(indexPath: indexPath)
         }
         return [deleteAction]
     }
     
 }
 
-extension EmployeeListViewController: TableViewModelController {
+extension CompanyListViewController: TableViewModelController {
     func viewModelFetchedData(result: Result<Void, Error>) {
         switch result {
         case .failure(let error):
@@ -127,7 +121,7 @@ extension EmployeeListViewController: TableViewModelController {
  
 }
 
-extension EmployeeListViewController {
+extension CompanyListViewController {
 
     func updateRighBarButton() {
         let btnFavourite = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
@@ -163,3 +157,4 @@ extension EmployeeListViewController {
         viewModel.updateSendSortedData(sendSortedData: false)
     }
 }
+
