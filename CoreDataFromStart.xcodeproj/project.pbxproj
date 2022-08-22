@@ -32,6 +32,7 @@
 		7E52554D28AC45C8000FFBE8 /* OrganisationHierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E52554C28AC45C8000FFBE8 /* OrganisationHierarchy.swift */; };
 		7E52554F28AC4620000FFBE8 /* EmployeeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E52554E28AC4620000FFBE8 /* EmployeeDetailsView.swift */; };
 		7E52555128AC469F000FFBE8 /* EmployeeTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E52555028AC469F000FFBE8 /* EmployeeTasksView.swift */; };
+		7E6BAFBB28B0CE230055C206 /* DTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6BAFBA28B0CE230055C206 /* DTask.swift */; };
 		7EF7BB812859305C00C9F469 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7BB802859305C00C9F469 /* AppDelegate.swift */; };
 		7EF7BB832859305C00C9F469 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7BB822859305C00C9F469 /* SceneDelegate.swift */; };
 		7EF7BB852859305C00C9F469 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7BB842859305C00C9F469 /* ViewController.swift */; };
@@ -67,6 +68,7 @@
 		7E52554C28AC45C8000FFBE8 /* OrganisationHierarchy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationHierarchy.swift; sourceTree = "<group>"; };
 		7E52554E28AC4620000FFBE8 /* EmployeeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsView.swift; sourceTree = "<group>"; };
 		7E52555028AC469F000FFBE8 /* EmployeeTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTasksView.swift; sourceTree = "<group>"; };
+		7E6BAFBA28B0CE230055C206 /* DTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTask.swift; sourceTree = "<group>"; };
 		7EF7BB7D2859305C00C9F469 /* CoreDataFromStart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataFromStart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF7BB802859305C00C9F469 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EF7BB822859305C00C9F469 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				7E0B01C128AA23B800D1D9A7 /* DEmployee.swift */,
 				7E0B01C328AA244F00D1D9A7 /* DCompany.swift */,
+				7E6BAFBA28B0CE230055C206 /* DTask.swift */,
 			);
 			path = DomainObjects;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				7E0B01CD28AA31AD00D1D9A7 /* UIView+Extension.swift in Sources */,
 				7E0B01CC28AA31AD00D1D9A7 /* UIColor+Extension.swift in Sources */,
 				7E52554428AB8D82000FFBE8 /* CompanyListViewController.swift in Sources */,
+				7E6BAFBB28B0CE230055C206 /* DTask.swift in Sources */,
 				7E52555128AC469F000FFBE8 /* EmployeeTasksView.swift in Sources */,
 				7E52554D28AC45C8000FFBE8 /* OrganisationHierarchy.swift in Sources */,
 				7E0B01C428AA244F00D1D9A7 /* DCompany.swift in Sources */,

@@ -77,6 +77,7 @@ final class EmployeeListViewModelImp: EmployeeListViewModel {
     }
     
     func deleteEmployee(indexPath: IndexPath) {
+        // Task 4: Delete an employee
         let employee = employees[indexPath.row]
         persistentContainer.viewContext.delete(employee)
         try? persistentContainer.viewContext.save()

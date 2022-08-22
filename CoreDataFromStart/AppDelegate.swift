@@ -119,7 +119,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         task1.owner = employee2
         task2.owner = employee2
         
-        try? moc.save()
+        do {
+            try moc.save()
+        } catch {
+            print(error)
+        }
+        
         return container
     }()
 

@@ -11,8 +11,8 @@ struct DEmployee {
     let age: Int32
     let firstName: String?
     let lastName: String?
-    let employer: Company?
-    let manager: Employee?
-    let reportees: NSSet?
-    let tasks: NSSet?
+//    let employer: Company?
+//    let manager: Employee?
+//    let reportees: NSSet?
+//    let tasks: NSSet?
 }

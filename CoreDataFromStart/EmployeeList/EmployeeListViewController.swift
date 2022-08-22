@@ -105,14 +105,13 @@ extension EmployeeListViewController: UITableViewDataSource {
         return true
     }
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self]  _, indexPath in
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteContextualAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] _, _, _ in
             print(indexPath.row)
             self?.viewModel.deleteEmployee(indexPath: indexPath)
         }
-        return [deleteAction]
+        return .init(actions: [deleteContextualAction])
     }
-    
 }
 
 extension EmployeeListViewController: TableViewModelController {
